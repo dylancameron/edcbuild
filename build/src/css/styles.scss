@@ -1,0 +1,352 @@
+@font-face {
+    font-family: 'Helvetica Neue LT Std';
+    src: url('../../assets/HelveticaNeueLTStd-Th.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ===========================
+// VARIABLES
+// ===========================
+$color-text: #fff;
+$color-bg: #111214;
+$color-link: #bad5e1;
+$color-link-hover: #ffffff;
+$font-fam: "Helvetica Neue LT Std", sans-serif;
+// ===========================
+//
+//
+// ===========================
+// BODY ELEMENTS
+// ===========================
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    overflow-y: hidden;
+    width: auto;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 0px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $color-link;
+        border-radius: 25px;
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+}
+
+html,
+body {
+    font-size: 14px;
+    margin: 0;
+    color: $color-text;
+    background-color: $color-bg;
+    display: flex;
+    white-space: nowrap;
+    // cursor: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+// ===========================
+//
+//
+// ===========================
+// PLACEHOLDER FOR MOBILE
+// ===========================
+//
+//
+// ===========================
+// CUSTOM CURSOR
+// ===========================
+// ===========================
+//
+//
+// ===========================
+// DEFAULT IMAGES
+// ===========================
+img {
+    border: 0;
+}
+// ===========================
+//
+//
+// ===========================
+// PLACEHOLDER FOR PAGE LOADER
+// ===========================
+//
+//
+// ===========================
+// LINKS, BUTTONS, & ICONS
+// ===========================
+a {
+    text-decoration: none;
+    color: $color-link;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    color: $color-link-hover;
+    outline: none;
+}
+// ===========================
+//
+//
+// ===========================
+// NAVIGATION ELEMENTS
+// ===========================
+.nav__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    text-align: center;
+
+    .nav__content {
+        display: flex;
+        align-items: flex-start;
+        max-width: 100vw;
+        width: 100vw;
+        padding: 3rem 2vw;
+        justify-content: space-between;
+
+        .nav__link-container {
+            display: flex;
+
+            // Vertical aligned
+            &.column {
+                flex-direction: column;
+                text-align: end;
+            }
+
+            &.align-end {
+                align-items: end;
+            }
+
+            // Text links
+            .nav__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+                // margin: 0 0 1rem;
+                font-family: $font-fam;
+                font-size: 2rem;
+                letter-spacing: 1px;
+                white-space: nowrap;
+                font-weight: 100;
+                color: $color-link;
+                text-decoration: none;
+
+                mix-blend-mode: difference;
+
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $color-link-hover;
+
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+    }
+}
+// ===========================
+//
+//
+// ===========================
+// CANVAS PROPERTIES
+// ===========================
+canvas {
+    scroll-snap-align: start;
+    // position: absolute;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 1;
+}
+
+.grid__item {
+    // position: fixed;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    // max-width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.warp-canvas {
+    max-width: 50vw;
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+// ===========================
+//
+//
+// ===========================
+// PAGE ELEMENTS
+// ===========================
+.section__full-page {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+
+    .hero__wrapper {
+        display: flex;
+        position: relative;
+        margin: auto;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+
+        .hero__contents {
+            position: absolute;
+            max-width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            height: 100vh;
+            object-fit: contain;
+
+            .hero__hero-text {
+                position: absolute;
+                font-size: 10vw;
+                letter-spacing: 2px;
+                font-family: $font-fam;
+                font-weight: 100;
+                white-space: nowrap;
+                color: $color-link;
+                z-index: 1;
+                margin: auto;
+                -webkit-user-select: none;
+                user-select: none;
+                transition: color 1s ease;
+                background-clip: text;
+                mix-blend-mode: difference;
+
+                &:hover {
+                    color: $color-link-hover;
+                    transition: color 0.5s ease;
+                }
+            }
+
+            .signature {
+                height: auto;
+                width: auto;
+                max-height: 60vh;
+            }
+        }
+    }
+}
+// ===========================
+//
+//
+// ===========================
+.slider-container {
+    position: relative;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.slider-content {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-item {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slider-button-wrapper {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 3;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    width: 100%;
+    padding: 3rem;
+    align-items: end;
+    bottom: 0;
+
+    .slider-button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: $font-fam;
+        color: $color-link;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2rem;
+
+        .icon {
+            transform: scale(3);
+            path {
+                fill: $color-link;
+                transition: 0.3s ease;
+            }
+
+            &.left {
+                transform: rotate(180deg) scale(3);
+            }
+        }
+
+        &:hover {
+            .icon {
+                path {
+                    fill: $color-text;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+    }
+}
+
+.errorText {
+    font-family: $font-fam; 
+    color: red;
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
