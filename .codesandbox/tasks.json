@@ -8,6 +8,11 @@
       "name": "yarn run dev",
       "command": "yarn run dev",
       "runAtStart": true
+    },
+    "npm run dev": {
+      "name": "npm run dev",
+      "command": "npm run dev",
+      "runAtStart": true
     }
   }
 }
